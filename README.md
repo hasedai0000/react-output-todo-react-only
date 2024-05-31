@@ -5,7 +5,7 @@ React アウトプットサンプル
 useState, Props のみの状態管理で Todo リストの基本的な機能を構築
 
 url はこちら
-https://hasedai0000.github.io/react-output-first/
+https://hasedai0000.github.io/react-output-todo-react-only/
 
 ## 目次
 
