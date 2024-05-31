@@ -1,6 +1,6 @@
 # react-output-first
 
-React アウトプットサンプル
+React アウトプット
 
 useState, Props のみの状態管理で Todo リストの基本的な機能を構築
 
