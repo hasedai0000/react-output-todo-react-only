@@ -32,6 +32,10 @@ export const TodoTemplate = () => {
     setSearchInputValue(e.target.value);
   };
 
+  /**
+   * Todo登録処理
+   * @param { * } e
+   */
   const handleAddTodo = (e) => {
     if (e.key === "Enter" && addInputValue !== "") {
       const nextUniqueId = uniqueId + 1;
@@ -47,6 +51,19 @@ export const TodoTemplate = () => {
       setUniqueId(nextUniqueId);
       // todo追加後、入力値をリセット
       setAddInputValue("");
+    }
+  };
+
+  /**
+   * Todo削除処理
+   * @param { number } targetId
+   * @param { string } targetTitle
+   */
+  const handleDeleteTodo = (targetId, targetTitle) => {
+    console.log(targetId, targetTitle);
+    if (window.confirm(`「${targetTitle}」のtodoを削除しますか？`)) {
+      const newTodoList = originTodoList.filter((todo) => todo.id !== targetId);
+      setOriginTodoList(newTodoList);
     }
   };
 
@@ -88,7 +105,11 @@ export const TodoTemplate = () => {
                 <li className={styles.todo} key={todo.id}>
                   <span className={styles.task}>{todo.title}</span>
                   <div className={styles.far}>
-                    <FontAwesomeIcon icon={faTrashAlt} size="lg" />
+                    <FontAwesomeIcon
+                      icon={faTrashAlt}
+                      size="lg"
+                      onClick={() => handleDeleteTodo(todo.id, todo.title)}
+                    />
                   </div>
                 </li>
               );
