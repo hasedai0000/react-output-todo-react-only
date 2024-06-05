@@ -3,7 +3,7 @@
  *
  * @package components
  */
-import styles from "./style.module.css";
+import styles from "./styles.module.css";
 
 /**
  * InputForm
@@ -11,9 +11,7 @@ import styles from "./style.module.css";
  * @returns
  */
 export const InputForm = (props) => {
-  /* props */
-  const { inputValue, placeholder, handleChangeValue, handleKeyDown } = props;
-
+  const { placeholder, inputValue, handleChangeValue, handleKeyDown } = props;
   return (
     <input
       className={styles.input}
