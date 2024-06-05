@@ -1,9 +1,22 @@
-import styles from "./styles.module.css";
+/**
+ * TodoList
+ *
+ * @package components
+ */
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+/* styles */
+import styles from "./styles.module.css";
 
+/**
+ * TodoList
+ * @param {*} props
+ * @returns
+ */
 export const TodoList = (props) => {
+  /* props */
   const { originTodoList, searchInputValue, handleDeleteTodo } = props;
+
   return (
     <ul className={styles.list}>
       {originTodoList

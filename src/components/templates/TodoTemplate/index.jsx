@@ -1,7 +1,7 @@
 /**
- * TodoPage
+ * TodoTemplate
  *
- * @package pages
+ * @package components
  */
 import styles from "./styles.module.css";
 import { useState } from "react";
@@ -11,7 +11,7 @@ import { TodoList } from "../../organisms/TodoList/index.jsx";
 import { InputForm } from "../../atoms/index.jsx";
 
 /**
- * TodoPage
+ * TodoTemplate
  * @returns {JSX.Element}
  * @constructor
  */
@@ -25,11 +25,20 @@ export const TodoTemplate = () => {
   /* search input title */
   const [searchInputValue, setSearchInputValue] = useState("");
 
+  /* actions */
+  /**
+   * addInputValueの変更処理
+   * @param {*} e
+   */
   const onChangeAddInputValue = (e) => {
     setAddInputValue(e.target.value);
   };
 
-  const onChangeSearchInputValue = (e) => {
+  /**
+   * 検索キーワード更新処理
+   * @param {*} e
+   */
+  const handleChangeSearchKeyword = (e) => {
     setSearchInputValue(e.target.value);
   };
 
@@ -83,7 +92,7 @@ export const TodoTemplate = () => {
         <InputForm
           placeholder={"Search Keyword"}
           inputValue={searchInputValue}
-          handleChangeValue={onChangeSearchInputValue}
+          handleChangeValue={handleChangeSearchKeyword}
         />
       </section>
       {/* タスク一覧表示画面 */}

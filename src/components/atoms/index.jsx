@@ -1,5 +1,15 @@
+/**
+ * InputForm
+ *
+ * @package components
+ */
 import styles from "./styles.module.css";
 
+/**
+ * InputForm
+ * @param {*} props
+ * @returns
+ */
 export const InputForm = (props) => {
   const { placeholder, inputValue, handleChangeValue, handleKeyDown } = props;
   return (
