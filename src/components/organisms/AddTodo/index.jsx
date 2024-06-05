@@ -1,3 +1,4 @@
+import { InputForm } from "../../atoms";
 import styles from "./styles.module.css";
 
 export const AddTodo = (props) => {
@@ -5,13 +6,11 @@ export const AddTodo = (props) => {
   return (
     <section className={styles.common}>
       <h2 className={styles.subTitle}>{"ADD TODO"}</h2>
-      <input
-        className={styles.input}
-        type="text"
+      <InputForm
         placeholder={"New Todo"}
-        value={addInputValue}
-        onChange={onChangeAddInputValue}
-        onKeyDown={handleAddTodo}
+        inputValue={addInputValue}
+        handleChangeValue={onChangeAddInputValue}
+        handleKeyDown={handleAddTodo}
       />
     </section>
   );
