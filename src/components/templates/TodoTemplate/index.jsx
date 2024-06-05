@@ -8,6 +8,7 @@ import { useState } from "react";
 import { INIT_TODO_LIST, INIT_UNIQUE_ID } from "../../../constants/data.js";
 import { AddTodo } from "../../organisms/AddTodo/index.jsx";
 import { TodoList } from "../../organisms/TodoList/index.jsx";
+import { InputForm } from "../../atoms/index.jsx";
 
 /**
  * TodoPage
@@ -60,7 +61,6 @@ export const TodoTemplate = () => {
    * @param { string } targetTitle
    */
   const handleDeleteTodo = (targetId, targetTitle) => {
-    console.log(targetId, targetTitle);
     if (window.confirm(`「${targetTitle}」のtodoを削除しますか？`)) {
       const newTodoList = originTodoList.filter((todo) => todo.id !== targetId);
       setOriginTodoList(newTodoList);
@@ -80,12 +80,10 @@ export const TodoTemplate = () => {
       </section>
       {/* タスク絞り込み画面 */}
       <section className={styles.common}>
-        <input
-          className={styles.input}
-          type="text"
-          placeholder="Search Keyword"
-          value={searchInputValue}
-          onChange={onChangeSearchInputValue}
+        <InputForm
+          placeholder={"Search Keyword"}
+          inputValue={searchInputValue}
+          handleChangeValue={onChangeSearchInputValue}
         />
       </section>
       {/* タスク一覧表示画面 */}
